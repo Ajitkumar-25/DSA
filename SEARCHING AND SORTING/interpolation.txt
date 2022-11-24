@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+ 
+interpolationSearch(int a[],int n,int x)
+{
+    int lo=0,hi=n-1;
+ 
+ while(lo<hi)
+ {  
+ int pos = lo + (((double)(hi - lo) /
+            (a[hi] - a[lo])) * (x - a[lo]));
+     if(a[pos]==x)
+      return pos;
+     else if(a[pos]>x)
+       hi=pos-1;
+       else
+       lo=pos+1;
+       }
+}
+int main()
+{
+    int n;
+    cout<<"enter size of array: ";
+    cin>>n;
+    cout<<"enter the elements of array: ";
+    int a[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    int x;
+    cout<<"enter the elements to be searched: ";
+    cin>>x;
+   int position= interpolationSearch(a,n,x);
+   cout<<"element found at  "<<position<<" index";
+   return 0;
+    }
+
