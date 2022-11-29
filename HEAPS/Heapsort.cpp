@@ -32,7 +32,7 @@ void heapsort(int arr[], int n)
 }
 void printarray(int arr[], int n)
 {
-    cout << "Sorted order is : ";
+
     for (int i = 0; i < n; i++)
         cout << arr[i] << " ";
 }
@@ -45,7 +45,12 @@ int main()
     cout << "Enter the elements : ";
     for (int i = 0; i < n; i++)
         cin >> arr[i];
+    cout <<"max heap is : ";
+    buildheap(arr, n);
+    printarray(arr, n);
+    cout<<endl;
     heapsort(arr, n);
+    cout << "Sorted order is : ";
     printarray(arr, n);
     return 0;
 }
